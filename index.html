@@ -1,76 +1,162 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>stormbase.io</title>
-  <style>
-    body {
-      background: linear-gradient(135deg, #6b8dd6, #f59f9f);
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      color: #222;
-      text-align: center;
-      padding: 60px 20px;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ThunderVault Homepage</title>
+<style>
+  body {
+    margin: 0;
+    background: #0033cc; /* Deep blue */
+    overflow: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    padding-top: 5vh;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffff33;
+  }
+
+  /* Placeholder hammer style */
+  #hammer {
+    margin: 0 auto 30px auto;
+    width: 150px;
+    height: 150px;
+    background: url('https://i.imgur.com/xXxl8JP.png') no-repeat center/contain;
+    filter: drop-shadow(0 0 5px #ffff33);
+  }
+
+  /* Buttons for zones */
+  .zone-btn {
+    display: inline-block;
+    background: #222;
+    border-radius: 12px;
+    color: white;
+    padding: 15px 30px;
+    margin: 0 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 10px #ffff33;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .zone-btn:hover {
+    background: #ffcc00;
+    color: #222;
+    box-shadow: 0 0 20px #ffcc00;
+  }
+
+  /* Lightning bolts container */
+  .lightning-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+  }
+
+  /* Each lightning bolt */
+  .lightning {
+    position: absolute;
+    top: -100px;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(45deg, #fff, #ff0);
+    opacity: 0.8;
+    filter: drop-shadow(0 0 6px #ffff00);
+    animation-name: lightning-fall;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+  }
+
+  /* Zigzag shape with clip-path */
+  .lightning::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -3px;
+    width: 8px;
+    height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 4px,
+      #ffff00 4px,
+      #ffff00 6px
+    );
+    clip-path: polygon(
+      0 0, 20% 25%, 0 50%, 20% 75%, 0 100%, 80% 100%, 60% 75%, 80% 50%,
+      60% 25%, 80% 0
+    );
+  }
+
+  /* Lightning falling animation */
+  @keyframes lightning-fall {
+    0% {
+      transform: translateY(-150px);
+      opacity: 0;
     }
-    h1 {
-      font-size: 3.5rem;
-      margin-bottom: 10px;
-      color: #fff;
-      text-shadow: 2px 2px 6px #0008;
+    10% {
+      opacity: 1;
     }
-    p.tagline {
-      font-size: 1.3rem;
-      margin-bottom: 40px;
-      color: #f3f3f3dd;
-      font-style: italic;
+    90% {
+      transform: translateY(110vh);
+      opacity: 1;
     }
-    .zones {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-      margin-top: 20px;
+    100% {
+      opacity: 0;
     }
-    .zone-box {
-      background: #fff9;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px #0004;
-      width: 250px;
-      padding: 30px 20px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      color: #222;
-      text-decoration: none;
-    }
-    .zone-box:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px #0009;
-      background: #ffefef;
-    }
-    .zone-box h2 {
-      margin-bottom: 15px;
-    }
-    .zone-box p {
-      font-size: 1rem;
-      line-height: 1.4;
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <h1>stormbase.io</h1>
-  <p class="tagline">Your go-to spot for fun, games, and good vibes!</p>
+<h1>⚡ Welcome to ThunderVault ⚡</h1>
 
-  <div class="zones">
-    <a href="girls.html" class="zone-box" style="color:#d6336c;">
-      <h2>💖 Girl’s Zone</h2>
-      <p>Music, fashion games, and all things pink & purple.</p>
-    </a>
+<div id="hammer" aria-label="Thor's hammer"></div>
 
-    <a href="boys.html" class="zone-box" style="color:#1e3a5f;">
-      <h2>💥 Boy’s Zone</h2>
-      <p>Action games, epic tunes, and all the cool vibes.</p>
-    </a>
-  </div>
+<a href="girls.html" class="zone-btn">💖 Girl's Zone</a>
+<a href="boys.html" class="zone-btn">💥 Boy's Zone</a>
+
+<div class="lightning-container" aria-hidden="true">
+  <!-- We'll add lightning bolts with JavaScript -->
+</div>
+
+<script>
+  const container = document.querySelector('.lightning-container');
+
+  function createLightning() {
+    const bolt = document.createElement('div');
+    bolt.classList.add('lightning');
+
+    // Random horizontal start (0 to 100vw)
+    bolt.style.left = Math.random() * 100 + 'vw';
+
+    // Random animation duration (1.5s to 3s)
+    bolt.style.animationDuration = (Math.random() * 1.5 + 1.5) + 's';
+
+    // Random animation delay so they don’t all start together
+    bolt.style.animationDelay = (Math.random() * 5) + 's';
+
+    container.appendChild(bolt);
+
+    // Remove the bolt after animation ends
+    bolt.addEventListener('animationend', () => {
+      bolt.remove();
+    });
+  }
+
+  // Create a new lightning bolt every 400ms
+  setInterval(createLightning, 400);
+</script>
 
 </body>
 </html>
