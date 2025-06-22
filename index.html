@@ -7,13 +7,12 @@
   <style>
     body {
       margin: 0;
-      background-color: #001f3f; /* Dark stormy blue */
+      background: linear-gradient(to bottom, #001f3f, #ffd700); /* blue to yellow */
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
       text-align: center;
       padding-top: 5vh;
       position: relative;
-      overflow: hidden;
     }
 
     h1 {
@@ -22,19 +21,14 @@
       text-shadow: 0 0 10px #ffff33;
     }
 
-    /* Hammer in the bottom-left corner */
     #hammer {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
+      margin: 0 auto 30px auto;
       width: 150px;
       height: 150px;
-      background: url('YOUR_HAMMER_IMAGE_RAW_URL_HERE') no-repeat center/contain;
-      background-size: contain;
+      background: url('https://i.imgur.com/xXxl8JP.png') no-repeat center/contain;
       filter: drop-shadow(0 0 10px #ccc);
     }
 
-    /* Zone buttons */
     .zone-btn {
       display: inline-block;
       background: #111;
@@ -54,42 +48,18 @@
       color: #111;
       box-shadow: 0 0 20px #ffd700;
     }
-
-    /* Lightning in the top-right corner */
-    .lightning-bolts {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .bolt {
-      width: 60px;
-      height: 120px;
-      background: url('YOUR_LIGHTNING_IMAGE_RAW_URL_HERE') no-repeat center/contain;
-      background-size: contain;
-    }
   </style>
 </head>
 <body>
 
   <h1>⚡ welcome to stormbase.io ⚡</h1>
 
-  <!-- Static lightning bolts in top-right -->
-  <div class="lightning-bolts">
-    <div class="bolt"></div>
-    <div class="bolt"></div>
-  </div>
-
-  <!-- Hammer in bottom-left -->
   <div id="hammer" aria-label="Thor's hammer"></div>
 
-  <!-- Zone buttons -->
   <a href="girls.html" class="zone-btn">💖 Girl's Zone</a>
   <a href="boys.html" class="zone-btn">💥 Boy's Zone</a>
 
 </body>
 </html>
+
 
