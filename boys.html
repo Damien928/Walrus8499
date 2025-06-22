@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boy's Zone</title>
+  <style>
+    body {
+      background-color: #1e3a5f; /* deep blue */
+      color: #a0c4ff; /* light blue */
+      font-family: sans-serif;
+      text-align: center;
+      padding: 5%;
+    }
+    a {
+      color: #a0c4ff;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ffc300; /* bright yellow */
+    }
+    ul {
+      list-style-type: square;
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 12px;
+      font-size: 18px;
+    }
+    iframe {
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #a0c4ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💥 Welcome to the Boy's Zone 💥</h1>
+
+  <h2>🎵 Pick a Song to Play</h2>
+  <ul>
+    <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/E56XBuEQpgw')">🎸 Song 1</a></li>
+    <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/KxD1bjx1n3M')">🎧 Song 2</a></li>
+    <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/uYlE98EATeE')">🎤 Song 3</a></li>
+  </ul>
+
+  <iframe id="musicPlayer" width="300" height="170" 
+    src="https://www.youtube.com/embed/E56XBuEQpgw" 
+    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+  </iframe>
+
+  <h2>🕹️ Game Modes Menu</h2>
+  <ul>
+    <li><a href="https://www.crazygames.com/game/skillwarz" target="_blank">🎯 Skillwarz</a></li>
+    <li><a href="https://www.crazygames.com/game/hazmob-fps-online-shooter" target="_blank">🔫 Hazmob FPS Online Shooter</a></li>
+    <li><a href="https://www.crazygames.com/game/shellshockersio" target="_blank">🥚 Shell Shockers</a></li>
+    <li><a href="https://www.roblox.com" target="_blank">🎮 Roblox</a></li>
+  </ul>
+
+  <br><br>
+  <a href="index.html">⬅ Back to Main Page</a>
+
+  <script>
+    function changeSong(url) {
+      document.getElementById('musicPlayer').src = url;
+    }
+  </script>
+
+</body>
+</html>
