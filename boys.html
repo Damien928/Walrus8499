@@ -21,15 +21,15 @@
       text-shadow: 0 0 10px #ff0000;
     }
 
-    .game-list {
+    .section {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 2rem auto;
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
 
-    .game-link {
+    .link-box {
       background: rgba(255 255 255 / 0.1);
       padding: 15px 20px;
       border-radius: 12px;
@@ -37,7 +37,7 @@
       transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .game-link:hover {
+    .link-box:hover {
       background: #ff0000;
       box-shadow: 0 0 20px #ff0000;
     }
@@ -54,31 +54,57 @@
     a:hover {
       text-decoration: underline;
     }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      text-shadow: 0 0 8px #ff0000;
+      font-weight: 700;
+      user-select: none;
+    }
   </style>
 </head>
 <body>
 
   <h1>💥 Boy's Zone 💥</h1>
 
-  <div class="game-list">
-    <div class="game-link">
+  <div class="section">
+    <div class="section-title">Games</div>
+
+    <div class="link-box">
       <a href="https://www.crazygames.com/game/skillwarz" target="_blank" rel="noopener noreferrer">Skillwarz</a>
     </div>
 
-    <div class="game-link">
+    <div class="link-box">
       <a href="https://www.crazygames.com/game/hazmob-fps-online-shooter" target="_blank" rel="noopener noreferrer">Hazmob FPS Online Shooter</a>
     </div>
 
-    <div class="game-link">
+    <div class="link-box">
       <a href="https://www.crazygames.com/game/shellshockersio" target="_blank" rel="noopener noreferrer">ShellShockers.io</a>
     </div>
 
-    <div class="game-link">
+    <div class="link-box">
       <a href="https://www.roblox.com/Login" target="_blank" rel="noopener noreferrer">Roblox Login</a>
     </div>
 
-    <div class="game-link">
+    <div class="link-box">
       <a href="https://www.chess.com/play/online" target="_blank" rel="noopener noreferrer">♟️ Play Online Chess</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Music Playlists</div>
+
+    <div class="link-box">
+      <a href="https://www.youtube.com/watch?v=E56XBuEQpgw" target="_blank" rel="noopener noreferrer">Juice WRLD Playlist</a>
+    </div>
+
+    <div class="link-box">
+      <a href="https://www.youtube.com/watch?v=KxD1bjx1n3M" target="_blank" rel="noopener noreferrer">Jason Aldean Playlist</a>
+    </div>
+
+    <div class="link-box">
+      <a href="https://www.youtube.com/watch?v=uYlE98EATeE" target="_blank" rel="noopener noreferrer">Morgan Wallen Playlist</a>
     </div>
   </div>
 
