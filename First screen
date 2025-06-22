@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choose Your Zone</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 10%;
+    }
+    button {
+      font-size: 24px;
+      margin: 20px;
+      padding: 20px 40px;
+      cursor: pointer;
+      border: 2px solid lime;
+      background: transparent;
+      color: lime;
+      transition: background 0.3s, color 0.3s;
+    }
+    button:hover {
+      background: lime;
+      color: black;
+    }
+    #content {
+      margin-top: 40px;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome! Choose Your Zone</h1>
+
+  <button onclick="showZone('girls')">Girl's Zone</button>
+  <button onclick="showZone('boys')">Boy's Zone</button>
+
+  <div id="content">
+    <!-- Zone content appears here -->
+  </div>
+
+  <script>
+    const zones = {
+      girls: `
+        <h2>Welcome to Girl's Zone 💖</h2>
+        <p>Here's all the cool stuff for girls:</p>
+        <ul>
+          <li>Makeup tips 💄</li>
+          <li>Fun crafts ✂️</li>
+          <li>Inspirational quotes 🌟</li>
+          <li><img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Sparkles" style="max-width:300px;"></li>
+        </ul>
+        <button onclick="goBack()">Go Back</button>
+      `,
+      boys: `
+        <h2>Welcome to Boy's Zone 💪</h2>
+        <p>Here's all the cool stuff for boys:</p>
+        <ul>
+          <li>Gaming tips 🎮</li>
+          <li>Science experiments 🔬</li>
+          <li>Funny jokes 😂</li>
+          <li><img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Cool" style="max-width:300px;"></li>
+        </ul>
+        <button onclick="goBack()">Go Back</button>
+      `
+    };
+
+    function showZone(zone) {
+      document.getElementById('content').innerHTML = zones[zone];
+    }
+
+    function goBack() {
+      document.getElementById('content').innerHTML = '';
+    }
+  </script>
+
+</body>
+</html>
