@@ -12,6 +12,8 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
+      margin: 0;
+      min-height: 100vh;
     }
     a {
       color: white;
@@ -45,12 +47,13 @@
 
   <h2>🎵 Pick a Playlist</h2>
   <ul>
+    <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/1C6e2MoS814')">🎤 Taylor Swift Playlist</a></li>
     <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/7Tft-hSzbbA')">🌸 Sabrina Carpenter Playlist</a></li>
     <li><a href="#" onclick="changeSong('https://www.youtube.com/embed/g8OwJVlbTT4')">🌟 Ariana Grande Playlist</a></li>
   </ul>
 
   <iframe id="musicPlayer" width="300" height="170" 
-    src="https://www.youtube.com/embed/7Tft-hSzbbA" 
+    src="https://www.youtube.com/embed/1C6e2MoS814" 
     frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
   </iframe>
 
