@@ -4,13 +4,13 @@
   <title>Boy's Zone</title>
   <style>
     body {
-      /* Repeating diagonal stripes: 15px each stripe, 45deg angle */
-      background: repeating-linear-gradient(
-        45deg,
-        #007bff 0,
-        #007bff 15px,
-        #ff0033 15px,
-        #ff0033 30px
+      background: linear-gradient(
+        135deg,
+        #007bff 0%,
+        #007bff 40%,
+        #b00066 50%,
+        #ff0033 60%,
+        #ff0033 100%
       );
       color: white;
       font-family: sans-serif;
@@ -19,7 +19,8 @@
       min-height: 100vh;
       margin: 0;
       background-attachment: fixed;
-      background-repeat: repeat;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     a {
       color: #ffffff;
