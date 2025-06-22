@@ -4,13 +4,13 @@
   <title>Boy's Zone</title>
   <style>
     body {
-      /* Diagonal stripes with repeating pattern */
+      /* Repeating diagonal stripes: 15px each stripe, 45deg angle */
       background: repeating-linear-gradient(
-        45deg,                  /* diagonal at 45 degrees */
-        #007bff,                /* vibrant blue */
-        #007bff 10px,           /* blue stripe thickness */
-        #ff0033 10px,           /* start red stripe */
-        #ff0033 20px            /* red stripe thickness */
+        45deg,
+        #007bff 0,
+        #007bff 15px,
+        #ff0033 15px,
+        #ff0033 30px
       );
       color: white;
       font-family: sans-serif;
@@ -20,7 +20,6 @@
       margin: 0;
       background-attachment: fixed;
       background-repeat: repeat;
-      background-size: auto;
     }
     a {
       color: #ffffff;
@@ -85,3 +84,4 @@
 
 </body>
 </html>
+
