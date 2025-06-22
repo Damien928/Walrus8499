@@ -7,7 +7,8 @@
   <style>
     body {
       margin: 0;
-      background: linear-gradient(to bottom, #001f3f, #ffd700); /* blue to yellow */
+      /* Pink to purple vertical gradient background */
+      background: linear-gradient(180deg, #ff99cc 0%, #663399 100%);
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: white;
       text-align: center;
@@ -18,7 +19,7 @@
     h1 {
       font-size: 3rem;
       margin-bottom: 20px;
-      text-shadow: 0 0 10px #ffff33;
+      text-shadow: 0 0 10px #ff99cc;
     }
 
     #hammer {
@@ -29,24 +30,45 @@
       filter: drop-shadow(0 0 10px #ccc);
     }
 
+    .zone-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .zone {
+      max-width: 250px;
+    }
+
     .zone-btn {
       display: inline-block;
       background: #111;
       border-radius: 12px;
       color: white;
       padding: 15px 30px;
-      margin: 0 20px;
+      margin-bottom: 10px;
       font-size: 1.4rem;
       font-weight: bold;
       text-decoration: none;
       box-shadow: 0 0 10px #555;
       transition: background 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
     }
 
     .zone-btn:hover {
-      background: #ffd700;
+      background: #ff66cc;
       color: #111;
-      box-shadow: 0 0 20px #ffd700;
+      box-shadow: 0 0 20px #ff66cc;
+    }
+
+    .zone-desc {
+      font-size: 1rem;
+      color: #eee;
+      text-shadow: 0 0 5px #000;
     }
   </style>
 </head>
@@ -56,8 +78,20 @@
 
   <div id="hammer" aria-label="Thor's hammer"></div>
 
-  <a href="girls.html" class="zone-btn">💖 Girl's Zone</a>
-  <a href="boys.html" class="zone-btn">💥 Boy's Zone</a>
+  <div class="zone-container">
+    <div class="zone">
+      <a href="girls.html" class="zone-btn">💖 Girl's Zone</a>
+      <p class="zone-desc">
+        A fun space for fashion, music, games, and all things girl power!
+      </p>
+    </div>
+    <div class="zone">
+      <a href="boys.html" class="zone-btn">💥 Boy's Zone</a>
+      <p class="zone-desc">
+        Action-packed games, music playlists, and cool stuff for the boys.
+      </p>
+    </div>
+  </div>
 
 </body>
 </html>
