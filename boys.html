@@ -4,7 +4,15 @@
   <title>Boy's Zone</title>
   <style>
     body {
-      background: linear-gradient(135deg, #007bff, #ff0033); /* Vibrant blue and red */
+      /* Vertical stripes with smooth blend */
+      background: linear-gradient(
+        to bottom,
+        #007bff 0%,     /* vibrant blue start */
+        #007bff 40%,    /* blue stripe */
+        #bf0033 45%,    /* blend start red */
+        #ff0033 60%,    /* red stripe */
+        #ff0033 100%    /* red end */
+      );
       color: white;
       font-family: sans-serif;
       text-align: center;
@@ -12,6 +20,8 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
+      margin: 0;
+      min-height: 100vh;
     }
     a {
       color: #ffffff;
@@ -26,7 +36,7 @@
       list-style-type: square;
       text-align: left;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 30px auto;
       padding-left: 20px;
     }
     li {
