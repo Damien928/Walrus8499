@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top Secret</title>
+  <style>
+    body {
+      background-color: black;
+      color: lime;
+      font-family: monospace;
+      text-align: center;
+      padding-top: 20%;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔒 Welcome to the Secret Web</h1>
+  <p>If you're reading this, you're in too deep.</p>
+</body>
+</html>
