@@ -1,87 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Boy's Zone</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boy's Zone - stormbase.io</title>
   <style>
     body {
-      background: linear-gradient(
-        135deg,
-        #007bff 0%,      /* vibrant blue start */
-        #007bff 45%,     /* hold blue until 45% */
-        #9933aa 50%,     /* blend zone middle (purple tone blend) */
-        #ff0033 55%,     /* start red at 55% */
-        #ff0033 100%     /* vibrant red to end */
-      );
-      color: white;
-      font-family: sans-serif;
-      text-align: center;
-      padding: 5%;
-      min-height: 100vh;
       margin: 0;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-size: cover;
+      background: linear-gradient(135deg, #004080 0%, #a00020 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
     }
-    a {
-      color: #ffffff;
-      font-weight: bold;
-      text-decoration: none;
-      cursor: pointer;
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px #ff0000;
     }
-    a:hover {
-      color: yellow;
-    }
-    ul {
-      list-style-type: square;
-      text-align: left;
+
+    .game-list {
       max-width: 600px;
-      margin: 0 auto 30px auto;
-      padding-left: 20px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    li {
-      margin-bottom: 12px;
-      font-size: 18px;
+
+    .game-link, .music-link {
+      background: rgba(255 255 255 / 0.1);
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.6);
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
-    iframe {
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px white;
+
+    .game-link:hover, .music-link:hover {
+      background: #ff0000;
+      box-shadow: 0 0 20px #ff0000;
+    }
+
+    a {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      user-select: none;
+      display: block;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
-  <h1>💥 Welcome to the Boy's Zone 💥</h1>
+  <h1>💥 Boy's Zone 💥</h1>
 
-  <h2>🎵 Pick a Playlist</h2>
-  <ul>
-    <li><a onclick="changeSong('https://www.youtube.com/embed/E56XBuEQpgw')">🎧 Juice WRLD Playlist</a></li>
-    <li><a onclick="changeSong('https://www.youtube.com/embed/KxD1bjx1n3M')">🔥 Jason Aldean Playlist</a></li>
-    <li><a onclick="changeSong('https://www.youtube.com/embed/uYlE98EATeE')">⚡ Morgan Wallen Playlist</a></li>
-  </ul>
+  <div class="game-list">
 
-  <iframe id="musicPlayer" width="300" height="170" 
-    src="https://www.youtube.com/embed/E56XBuEQpgw" 
-    frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
-  </iframe>
+    <div class="game-link">
+      <a href="https://www.crazygames.com/game/skillwarz" target="_blank" rel="noopener noreferrer">Skillwarz</a>
+    </div>
 
-  <h2>🕹️ Game Modes Menu</h2>
-  <ul>
-    <li><a href="https://www.crazygames.com/game/skillwarz" target="_blank">🎯 Skillwarz</a></li>
-    <li><a href="https://www.crazygames.com/game/hazmob-fps-online-shooter" target="_blank">🔫 Hazmob FPS Online Shooter</a></li>
-    <li><a href="https://www.crazygames.com/game/shellshockersio" target="_blank">🥚 Shell Shockers</a></li>
-    <li><a href="https://www.roblox.com" target="_blank">🎮 Roblox</a></li>
-    <li><a href="https://catac.io" target="_blank">🗡️ Catac.io</a></li>
-  </ul>
+    <div class="game-link">
+      <a href="https://www.crazygames.com/game/hazmob-fps-online-shooter" target="_blank" rel="noopener noreferrer">Hazmob FPS Online Shooter</a>
+    </div>
 
-  <br><br>
-  <a href="index.html">⬅ Back to Main Page</a>
+    <div class="game-link">
+      <a href="https://www.crazygames.com/game/shellshockersio" target="_blank" rel="noopener noreferrer">ShellShockers.io</a>
+    </div>
 
-  <script>
-    function changeSong(url) {
-      document.getElementById('musicPlayer').src = url;
-    }
-  </script>
+    <div class="game-link">
+      <a href="https://www.roblox.com/Login" target="_blank" rel="noopener noreferrer">Roblox Login</a>
+    </div>
+
+    <!-- NEW CHESS GAME LINK -->
+    <div class="game-link">
+      <a href="https://www.chess.com/play/online" target="_blank" rel="noopener noreferrer">♟️ Play Online Chess</a>
+    </div>
+
+  </div>
 
 </body>
 </html>
